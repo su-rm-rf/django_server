@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/todo/list">todo_list</a>
+  {% if todo_list %}
+    <ul>
+      {% for todo in todo_list %}
+        <li>
+          <a href="/todo/{{todo.id}}">{{ todo.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>no todo.</p>
+  {% endif %}
+</body>
+</html>
